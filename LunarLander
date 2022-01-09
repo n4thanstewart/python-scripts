@@ -1,0 +1,74 @@
+import time
+
+# Customise the game:
+height = 600 #m
+fuel = 35 #s
+
+# Variables
+g = -1.625 #m/s^2
+burn = 2.5 #m/s^2
+t = 0 #s
+totalTime = 0 #s
+v = 0.0 #m/s
+burningAlready = False
+burnNow = False
+fuelUsed = 0 #s
+emptyTank = False
+
+# Lunar Landing
+print("\n\033[4mLunar Lander\033[0m\n\nYou're falling to the surface of the moon!",
+      "\nDescend\033[6;32m",height,"\033[0mmeters without crash landing.",
+      "\nUse the Burn button to slow your speed to less than 10m/s when you're near the surface.")
+input("Ready? Hit Enter to start ")
+while True:
+    if burnNow:
+        a=g+burn
+        if burningAlready:
+            v-=a*t
+            t+=1
+            v+=a*t
+        else:
+            t=1
+            v+=a*t
+        burningAlready=True
+    else:
+        a=g
+        if burningAlready:
+            t=1
+            v+=a*t
+        else:
+            v-=a*t
+            t+=1
+            v+=a*t
+        burningAlready=False
+    totalTime+=1
+    height+=v
+    if height <= 0:
+        if (v<0.0 and v>-10.0):
+            print("\n\033[0;32mSuccessful landing!\033[0m\nTime:",totalTime,"seconds"
+                  "\nLanding Velocity:",v,"m/s",
+                  "\nFuel used:",fuelUsed,"seconds\n")
+            break
+        else:
+            print("\n\033[0;91mYou crashed!\033[0m\nTime:",totalTime,"seconds,"
+                  "\nLanding Velocity:",v,"m/s",
+                  "\nFuel used:",fuelUsed,"seconds\n")
+            break
+    print("\nTime:",totalTime,"seconds\nVelocity:",v,"m/s\nDistance left:",height,"metres",
+          "\nFuel left: ",fuel,"seconds")
+    if emptyTank:
+        time.sleep(1)
+        continue
+    if fuel==0:
+        print("\n\033[0;91mYou've run out of fuel!\033[0m")
+        emptyTank=True
+        burnNow=False
+        time.sleep(1)
+        continue
+    query=input("> Hit the Burn button? (y/n): ")
+    if query=='y':
+        fuel-=1
+        fuelUsed+=1
+        burnNow=True
+    else:
+        burnNow=False
