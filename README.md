@@ -1,11 +1,13 @@
 # Lunar Lander
 
-This is my solution to a common Python coding homework task.
+This is my solution to the common Python coding homework task.
+
+For a breakdown and **explanation** of the code [see this document](https://docs.google.com/document/d/1RJafO-U9N3CYPYn95k077ejFx8q94OU7rcAe7nNx8uI/edit?usp=sharing).
 
 ## Notes:
 To play the game, run the script in a Python IDE.
 
-The height is set to 600m and the fuel __only 35s__, which makes the game only last around a minute with an optimal amount of fuel to use. Change these 
+The height is set to 600m and the fuel __only 35s__ instead of 90, which makes the game only last around a minute with an optimal amount of fuel to use. Change these at the top of the script to customise the game.
 
 ## Objective
 Computer simulation is used by engineers to test out ideas before actually building
