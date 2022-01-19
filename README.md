@@ -12,6 +12,6 @@
 
 Although it doesn't look exactly like the real matrix patterns from the film, it's similar in appearance, using binary streaks of 1s and 0s instead of symbols.
 
-Run the script in a Python IDE or download and run the executable file.
+Run the script in a Python IDE or download and run the executable file. Enter a value for height, width and opacity (how densely the pattern should generate).
 
 For coloured outputs, run in an IDE.
