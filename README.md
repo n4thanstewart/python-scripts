@@ -15,3 +15,5 @@ Copy the code into a Python IDE **or** download and run the _.zip_ exec file, bo
 >- Rule Four. A dead flower with exactly three living neighbors is reborn. It springs back to life.
 
 Whilst the grid is unfortunately not infinite, the rules are in play to form this simple game of flowers similar to how it is described in the Grimoire.
+
+This is only a fun interpretation of the game as I read it, whilst learning about Destiny's complex story.
